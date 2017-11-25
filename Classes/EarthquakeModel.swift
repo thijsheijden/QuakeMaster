@@ -13,7 +13,17 @@ class EarthquakeModel {
     var lat: Double = 0.0
     var lon: Double = 0.0
     var strength: Double = 0.0
-    var place: String = ""
-    var latlon = [Double : Double]()
+    var depth: Int = 0
+    var title: String = ""
+    var location: String = ""
     
+    init(lat: Double, lon: Double, strength: Double, depth: Int, title: String, location: String) {
+        self.lat = lat
+        self.lon = lon
+        self.strength = strength
+        self.depth = depth
+        self.title = title
+        self.location = location
+        
+    }
 }

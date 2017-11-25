@@ -14,8 +14,7 @@ import MapKit
 class ViewController: UIViewController {
 
     //Constants
-    let URL: String = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
-    let earthquakeModel = EarthquakeModel()
+    let URL: String = "https://earthquake-report.com/feeds/recent-eq?json"
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -55,20 +54,21 @@ class ViewController: UIViewController {
     }
     
     func updateEarthquakeData(json : JSON) {
-        earthquakeModel.lon = json["features"][0]["geometry"]["coordinates"][0].doubleValue
-        earthquakeModel.lat = json["features"][0]["geometry"]["coordinates"][1].doubleValue
-        earthquakeModel.strength = json["features"][0]["properties"]["mag"].doubleValue
-        earthquakeModel.place = json["features"][0]["properties"]["place"].stringValue
         
-        print(earthquakeModel.lat, earthquakeModel.lon)
+        let earthquakeArray = json.array!
         
-        let earthquakeLocation = CLLocationCoordinate2D(latitude: earthquakeModel.lat, longitude: earthquakeModel.lon)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = earthquakeLocation
-        annotation.title = "Earthquake \(earthquakeModel.place)"
-        annotation.subtitle = "\(earthquakeModel.strength) on the scale of Richter"
+        for entry in earthquakeArray {
+            let long = entry["longitude"].doubleValue
+            let lat = entry["latitude"].doubleValue
+            let title = entry["title"].stringValue
+            let depth = entry["depth"].intValue
+            let strength = entry["magnitude"].doubleValue
+            let location = entry["location"].stringValue
+            
+            let earthquake = EarthquakeModel(lat: lat, lon: long, strength: strength, depth: depth, title: title, location: location)
+            print(earthquake)
+        }
         
-        mapView.addAnnotation(annotation)
     }
     
     
