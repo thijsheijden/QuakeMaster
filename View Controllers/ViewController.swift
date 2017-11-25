@@ -55,8 +55,10 @@ class ViewController: UIViewController {
     
     func updateEarthquakeData(json : JSON) {
         
+        //Creating an array from the JSON data
         let earthquakeArray = json.array!
         
+        //Looping through the array looking for items needed
         for entry in earthquakeArray {
             let long = entry["longitude"].doubleValue
             let lat = entry["latitude"].doubleValue
@@ -65,8 +67,16 @@ class ViewController: UIViewController {
             let strength = entry["magnitude"].doubleValue
             let location = entry["location"].stringValue
             
+            //Adding the information found to a new constant called "Earthquake", built from the EarthquakeModel class
             let earthquake = EarthquakeModel(lat: lat, lon: long, strength: strength, depth: depth, title: title, location: location)
-            print(earthquake)
+            
+            //Placing all the earthquake constants on the map
+            let earthquakeLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(earthquake.lat, earthquake.lon)
+            let earthquakeAnnotation = MKPointAnnotation()
+            earthquakeAnnotation.coordinate = earthquakeLocation
+            earthquakeAnnotation.title = earthquake.title
+            earthquakeAnnotation.subtitle = "\(earthquake.strength) on the scale of Richter"
+            mapView.addAnnotation(earthquakeAnnotation)
         }
         
     }
