@@ -16,16 +16,15 @@ class EarthquakeModel {
     var depth: Int = 0
     var title: String = ""
     var location: String = ""
-    var image: String = ""
+    var dateTime: String = ""
     
-    init(lat: Double, lon: Double, strength: Double, depth: Int, title: String, location: String, image: String) {
+    init(lat: Double, lon: Double, strength: Double, depth: Int, title: String, location: String, dateTime: String) {
         self.lat = lat
         self.lon = lon
         self.strength = strength
         self.depth = depth
         self.title = title
         self.location = location
-        self.image = image
-        
+        self.dateTime = dateTime
     }
 }
