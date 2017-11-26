@@ -17,6 +17,8 @@
 		76AEA9521FCA094A00DC87DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AEA9501FCA094A00DC87DD /* LaunchScreen.storyboard */; };
 		76AEA95D1FCA094A00DC87DD /* QuakesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA95C1FCA094A00DC87DD /* QuakesTests.swift */; };
 		76AEA9681FCA094A00DC87DD /* QuakesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA9671FCA094A00DC87DD /* QuakesUITests.swift */; };
+		76EA4C221FCAC86700DFB1F6 /* shadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA4C211FCAC86700DFB1F6 /* shadowView.swift */; };
+		76EA4C241FCACA6900DFB1F6 /* EarthquakePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA4C231FCACA6900DFB1F6 /* EarthquakePin.swift */; };
 		F2CF876B2B8154DD7AEEE827 /* Pods_QuakesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D2DD4BC65D86761CE9C4A2 /* Pods_QuakesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		76AEA9631FCA094A00DC87DD /* QuakesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AEA9671FCA094A00DC87DD /* QuakesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakesUITests.swift; sourceTree = "<group>"; };
 		76AEA9691FCA094A00DC87DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76EA4C211FCAC86700DFB1F6 /* shadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shadowView.swift; sourceTree = "<group>"; };
+		76EA4C231FCACA6900DFB1F6 /* EarthquakePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakePin.swift; sourceTree = "<group>"; };
 		A9C94BD80CF148AC0166A2BB /* Pods-Quakes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quakes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quakes/Pods-Quakes.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D2DD4BC65D86761CE9C4A2 /* Pods_QuakesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDEC8E3FC0CFFF52CA4DD444 /* Pods-Quakes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quakes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quakes/Pods-Quakes.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */,
+				76EA4C211FCAC86700DFB1F6 /* shadowView.swift */,
+				76EA4C231FCACA6900DFB1F6 /* EarthquakePin.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -481,6 +487,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EA4C241FCACA6900DFB1F6 /* EarthquakePin.swift in Sources */,
+				76EA4C221FCAC86700DFB1F6 /* shadowView.swift in Sources */,
 				76AEA94A1FCA094A00DC87DD /* ViewController.swift in Sources */,
 				7674DF3E1FCA0C210061638A /* EarthquakeModel.swift in Sources */,
 				76AEA9481FCA094A00DC87DD /* AppDelegate.swift in Sources */,

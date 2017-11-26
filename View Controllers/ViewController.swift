@@ -11,19 +11,24 @@ import Alamofire
 import SwiftyJSON
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
-    //Constants
+    //global constants and variables
     let URL: String = "https://earthquake-report.com/feeds/recent-eq?json"
+    var earthquakePin: EarthquakePin!
+    
     
     @IBOutlet weak var mapView: MKMapView!
-    
-    
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        getEarthquakeData(url: URL)
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
         
         //setting the initial location of the mapView
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
@@ -35,6 +40,8 @@ class ViewController: UIViewController {
         }
         centerMapOnLocation(location: initialLocation)
         getEarthquakeData(url: URL)
+        
+        
     }
     
     func getEarthquakeData(url: String) {
@@ -67,21 +74,42 @@ class ViewController: UIViewController {
             let strength = entry["magnitude"].doubleValue
             let location = entry["location"].stringValue
             
-            //Adding the information found to a new constant called "Earthquake", built from the EarthquakeModel class
-            let earthquake = EarthquakeModel(lat: lat, lon: long, strength: strength, depth: depth, title: title, location: location)
+            var image: String!
             
+            if strength < 4.0 {
+                image = "1"
+            } else if strength >= 4.0 {
+                image = "2"
+            } else {
+                image = "3"
+            }
+            
+            //Adding the information found to a new constant called "Earthquake", built from the EarthquakeModel class
+            let earthquake = EarthquakeModel(lat: lat, lon: long, strength: strength, depth: depth, title: title, location: location, image: image)
+            let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(earthquake.lat, earthquake.lon)
+            
+            earthquakePin = EarthquakePin(title: earthquake.title, subtitle: "\(earthquake.strength) on the scale of Richter", coordinate: coordinate)
+            mapView.addAnnotation(earthquakePin)
+            
+            mapView(mapView, viewFor: earthquakePin)
+            
+            
+
             //Placing all the earthquake constants on the map
-            let earthquakeLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(earthquake.lat, earthquake.lon)
-            let earthquakeAnnotation = MKPointAnnotation()
-            earthquakeAnnotation.coordinate = earthquakeLocation
-            earthquakeAnnotation.title = earthquake.title
-            earthquakeAnnotation.subtitle = "\(earthquake.strength) on the scale of Richter"
-            mapView.addAnnotation(earthquakeAnnotation)
+//            let earthquakeLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(earthquake.lat, earthquake.lon)
+//            let earthquakeAnnotation = MKPointAnnotation()
+//            earthquakeAnnotation.coordinate = earthquakeLocation
+//            earthquakeAnnotation.title = earthquake.title
+//            earthquakeAnnotation.subtitle = "\(earthquake.strength) on the scale of Richter"
+//            mapView.addAnnotation(earthquakeAnnotation)
         }
-        
     }
     
-    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKAnnotationView(annotation: earthquakePin, reuseIdentifier: "eartquakePin")
+        annotationView.image = UIImage(named: "1")
+        return annotationView
+    }
     
 }
 
