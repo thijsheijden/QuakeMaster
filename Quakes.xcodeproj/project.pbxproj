@@ -10,7 +10,7 @@
 		43CE2068EF935BBF229704C6 /* Pods_Quakes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BA2E3FF1BB507D6CA525D6 /* Pods_Quakes.framework */; };
 		7674DF3E1FCA0C210061638A /* EarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */; };
 		76AEA9481FCA094A00DC87DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA9471FCA094A00DC87DD /* AppDelegate.swift */; };
-		76AEA94A1FCA094A00DC87DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA9491FCA094A00DC87DD /* ViewController.swift */; };
+		76AEA94A1FCA094A00DC87DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA9491FCA094A00DC87DD /* MainViewController.swift */; };
 		76AEA94D1FCA094A00DC87DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AEA94B1FCA094A00DC87DD /* Main.storyboard */; };
 		76AEA94F1FCA094A00DC87DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AEA94E1FCA094A00DC87DD /* Assets.xcassets */; };
 		76AEA9521FCA094A00DC87DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AEA9501FCA094A00DC87DD /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeModel.swift; sourceTree = "<group>"; };
 		76AEA9441FCA094A00DC87DD /* Quakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AEA9471FCA094A00DC87DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76AEA9491FCA094A00DC87DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		76AEA9491FCA094A00DC87DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		76AEA94C1FCA094A00DC87DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76AEA94E1FCA094A00DC87DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76AEA9511FCA094A00DC87DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,29 +52,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7674DF391FCA0BC00061638A /* Classes */ = {
+		339E14641FD1F1A200C21FD5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				339E14651FD1F1CD00C21FD5 /* General */,
+				339E14661FD1F27500C21FD5 /* Networking */,
+				339E14681FD1F4C300C21FD5 /* UIElements */,
+				7674DF3A1FCA0BC90061638A /* Views */,
+			);
+			name = Classes;
+			path = C;
+			sourceTree = "<group>";
+		};
+		339E14651FD1F1CD00C21FD5 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				76AEA9471FCA094A00DC87DD /* AppDelegate.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		339E14661FD1F27500C21FD5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				339E14671FD1F27D00C21FD5 /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		339E14671FD1F27D00C21FD5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */,
-				76EA4C211FCAC86700DFB1F6 /* shadowView.swift */,
-				76EA4C231FCACA6900DFB1F6 /* EarthquakePin.swift */,
 			);
-			path = Classes;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		7674DF3A1FCA0BC90061638A /* View Controllers */ = {
+		339E14681FD1F4C300C21FD5 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				76AEA9491FCA094A00DC87DD /* ViewController.swift */,
+				76EA4C231FCACA6900DFB1F6 /* EarthquakePin.swift */,
+				76EA4C211FCAC86700DFB1F6 /* shadowView.swift */,
 			);
-			path = "View Controllers";
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		339E14691FD1F4EF00C21FD5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				76AEA9491FCA094A00DC87DD /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7674DF3A1FCA0BC90061638A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				339E14691FD1F4EF00C21FD5 /* Main */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7674DF3B1FCA0BD20061638A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				76AEA95E1FCA094A00DC87DD /* Info.plist */,
 				76AEA94E1FCA094A00DC87DD /* Assets.xcassets */,
+				76AEA95E1FCA094A00DC87DD /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -82,8 +125,8 @@
 		7674DF3C1FCA0BE30061638A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				76AEA9501FCA094A00DC87DD /* LaunchScreen.storyboard */,
 				76AEA94B1FCA094A00DC87DD /* Main.storyboard */,
+				76AEA9501FCA094A00DC87DD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -91,10 +134,6 @@
 		76AEA93B1FCA094A00DC87DD = {
 			isa = PBXGroup;
 			children = (
-				7674DF3C1FCA0BE30061638A /* Storyboards */,
-				7674DF3B1FCA0BD20061638A /* Supporting Files */,
-				7674DF3A1FCA0BC90061638A /* View Controllers */,
-				7674DF391FCA0BC00061638A /* Classes */,
 				76AEA9461FCA094A00DC87DD /* Quakes */,
 				76AEA9451FCA094A00DC87DD /* Products */,
 				CD080229C061F02AF7A8C0E4 /* Pods */,
@@ -113,7 +152,9 @@
 		76AEA9461FCA094A00DC87DD /* Quakes */ = {
 			isa = PBXGroup;
 			children = (
-				76AEA9471FCA094A00DC87DD /* AppDelegate.swift */,
+				339E14641FD1F1A200C21FD5 /* Classes */,
+				7674DF3C1FCA0BE30061638A /* Storyboards */,
+				7674DF3B1FCA0BD20061638A /* Supporting Files */,
 			);
 			path = Quakes;
 			sourceTree = "<group>";
@@ -274,7 +315,7 @@
 			files = (
 				76EA4C241FCACA6900DFB1F6 /* EarthquakePin.swift in Sources */,
 				76EA4C221FCAC86700DFB1F6 /* shadowView.swift in Sources */,
-				76AEA94A1FCA094A00DC87DD /* ViewController.swift in Sources */,
+				76AEA94A1FCA094A00DC87DD /* MainViewController.swift in Sources */,
 				7674DF3E1FCA0C210061638A /* EarthquakeModel.swift in Sources */,
 				76AEA9481FCA094A00DC87DD /* AppDelegate.swift in Sources */,
 			);

@@ -8,7 +8,8 @@
 
 import MapKit
 
-class EarthquakePin: NSObject, MKAnnotation {
+final class EarthquakePin: NSObject, MKAnnotation {
+    
     var title: String?
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D

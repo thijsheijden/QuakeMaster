@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class shadowView: UIButton {
+final class shadowView: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
