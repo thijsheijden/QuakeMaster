@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Quakes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGQ-nL-oHR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o38-cz-p0I" customClass="shadowView" customModule="Quakes" customModuleProvider="target">
+                                <rect key="frame" x="279" y="571" width="76" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="Hja-h3-7Q0"/>
+                                    <constraint firstAttribute="height" constant="76" id="dIZ-Gx-b9y"/>
+                                </constraints>
+                                <state key="normal" image="refreshIcon"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lf-io-WLa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o38-cz-p0I" secondAttribute="bottom" constant="20" id="Blg-7S-PYo"/>
+                            <constraint firstItem="wGQ-nL-oHR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TCH-Yp-yUA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o38-cz-p0I" secondAttribute="trailing" constant="20" id="XNh-xu-7TD"/>
+                            <constraint firstItem="wGQ-nL-oHR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h0X-pd-nJk"/>
+                            <constraint firstItem="wGQ-nL-oHR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="i1h-2v-w7N"/>
+                            <constraint firstItem="wGQ-nL-oHR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jIv-zB-i9r"/>
+                            <constraint firstItem="wGQ-nL-oHR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lTX-vQ-UkV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="wGQ-nL-oHR" id="1IZ-or-TJe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="refreshIcon" width="300" height="300"/>
+    </resources>
+</document>
