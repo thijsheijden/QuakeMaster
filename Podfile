@@ -6,9 +6,6 @@ target 'Quakes' do
   use_frameworks!
 
   # Pods for Quakes
-pod 'Alamofire'
-pod 'SwiftyJSON'
-
   target 'QuakesTests' do
     inherit! :search_paths
     # Pods for testing

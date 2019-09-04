@@ -12,10 +12,12 @@ class EarthquakePin: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D
+    var image: UIImage
     
-    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, subtitle: String, lat: Double, lon: Double, image: String) {
         self.title = title
         self.subtitle = subtitle
-        self.coordinate = coordinate
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        self.image = UIImage(named: image)!
     }
 }

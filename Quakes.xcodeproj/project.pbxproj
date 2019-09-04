@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		119842519DFDE80918B74500 /* Pods_QuakesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FCA29A33D56CA72D5BEF76 /* Pods_QuakesTests.framework */; };
 		43CE2068EF935BBF229704C6 /* Pods_Quakes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BA2E3FF1BB507D6CA525D6 /* Pods_Quakes.framework */; };
-		7674DF3E1FCA0C210061638A /* EarthquakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */; };
+		76403DA5231FD08C00BCED50 /* EarthquakeDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76403DA4231FD08C00BCED50 /* EarthquakeDataStruct.swift */; };
+		76403DA7231FD0D400BCED50 /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76403DA6231FD0D400BCED50 /* PresenterProtocol.swift */; };
+		76403DA9231FD0DB00BCED50 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76403DA8231FD0DB00BCED50 /* MainPresenter.swift */; };
+		76403DAD231FD18700BCED50 /* earthquakeDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76403DAC231FD18700BCED50 /* earthquakeDataRequest.swift */; };
 		76AEA9481FCA094A00DC87DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA9471FCA094A00DC87DD /* AppDelegate.swift */; };
 		76AEA94A1FCA094A00DC87DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEA9491FCA094A00DC87DD /* ViewController.swift */; };
 		76AEA94D1FCA094A00DC87DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AEA94B1FCA094A00DC87DD /* Main.storyboard */; };
@@ -43,7 +46,10 @@
 		41D82EAA10F32794D39D4EC5 /* Pods-QuakesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuakesUITests/Pods-QuakesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		58FCA29A33D56CA72D5BEF76 /* Pods_QuakesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BA2E3FF1BB507D6CA525D6 /* Pods_Quakes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quakes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeModel.swift; sourceTree = "<group>"; };
+		76403DA4231FD08C00BCED50 /* EarthquakeDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDataStruct.swift; sourceTree = "<group>"; };
+		76403DA6231FD0D400BCED50 /* PresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
+		76403DA8231FD0DB00BCED50 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		76403DAC231FD18700BCED50 /* earthquakeDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = earthquakeDataRequest.swift; sourceTree = "<group>"; };
 		76AEA9441FCA094A00DC87DD /* Quakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AEA9471FCA094A00DC87DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76AEA9491FCA094A00DC87DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,14 +101,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7674DF391FCA0BC00061638A /* Classes */ = {
+		76403DA2231FD07900BCED50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7674DF3D1FCA0C210061638A /* EarthquakeModel.swift */,
-				76EA4C211FCAC86700DFB1F6 /* shadowView.swift */,
+				76403DAB231FD17900BCED50 /* Methods */,
+				76403DAA231FD17400BCED50 /* Data */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		76403DA3231FD08000BCED50 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				76403DA6231FD0D400BCED50 /* PresenterProtocol.swift */,
+				76403DA8231FD0DB00BCED50 /* MainPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		76403DAA231FD17400BCED50 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				76403DA4231FD08C00BCED50 /* EarthquakeDataStruct.swift */,
 				76EA4C231FCACA6900DFB1F6 /* EarthquakePin.swift */,
 			);
-			path = Classes;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		76403DAB231FD17900BCED50 /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				76403DAC231FD18700BCED50 /* earthquakeDataRequest.swift */,
+			);
+			path = Methods;
+			sourceTree = "<group>";
+		};
+		7674DF391FCA0BC00061638A /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				76EA4C211FCAC86700DFB1F6 /* shadowView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		7674DF3A1FCA0BC90061638A /* View Controllers */ = {
@@ -134,10 +173,12 @@
 		76AEA93B1FCA094A00DC87DD = {
 			isa = PBXGroup;
 			children = (
+				76403DA3231FD08000BCED50 /* Presenters */,
+				76403DA2231FD07900BCED50 /* Models */,
 				7674DF3C1FCA0BE30061638A /* Storyboards */,
 				7674DF3B1FCA0BD20061638A /* Supporting Files */,
 				7674DF3A1FCA0BC90061638A /* View Controllers */,
-				7674DF391FCA0BC00061638A /* Classes */,
+				7674DF391FCA0BC00061638A /* Custom Views */,
 				76AEA9461FCA094A00DC87DD /* Quakes */,
 				76AEA95B1FCA094A00DC87DD /* QuakesTests */,
 				76AEA9661FCA094A00DC87DD /* QuakesUITests */,
@@ -217,8 +258,6 @@
 				76AEA9401FCA094A00DC87DD /* Sources */,
 				76AEA9411FCA094A00DC87DD /* Frameworks */,
 				76AEA9421FCA094A00DC87DD /* Resources */,
-				184CBE2DAC67A42A3868CC9D /* [CP] Embed Pods Frameworks */,
-				ED202A190EEFC6785239FE03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,8 +276,6 @@
 				76AEA9541FCA094A00DC87DD /* Sources */,
 				76AEA9551FCA094A00DC87DD /* Frameworks */,
 				76AEA9561FCA094A00DC87DD /* Resources */,
-				CCB596D3F541AF5B694E16CD /* [CP] Embed Pods Frameworks */,
-				70B058AC19CB9085B8192317 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,8 +295,6 @@
 				76AEA95F1FCA094A00DC87DD /* Sources */,
 				76AEA9601FCA094A00DC87DD /* Frameworks */,
 				76AEA9611FCA094A00DC87DD /* Resources */,
-				489736C9F09D47AFB9AF02E3 /* [CP] Embed Pods Frameworks */,
-				DF4D1BD510FDEAA2EDD1D7AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,49 +380,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		184CBE2DAC67A42A3868CC9D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quakes/Pods-Quakes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3F3202EE3E2F59BAE9E21C89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuakesUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		489736C9F09D47AFB9AF02E3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuakesUITests/Pods-QuakesUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4CA5FA2137BEBCB651F4F9F4 /* [CP] Check Pods Manifest.lock */ = {
@@ -396,28 +404,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quakes-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		70B058AC19CB9085B8192317 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuakesTests/Pods-QuakesTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E642028A148C2CB92D1E932 /* [CP] Check Pods Manifest.lock */ = {
@@ -426,58 +422,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuakesTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CCB596D3F541AF5B694E16CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuakesTests/Pods-QuakesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF4D1BD510FDEAA2EDD1D7AD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuakesUITests/Pods-QuakesUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED202A190EEFC6785239FE03 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quakes/Pods-Quakes-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -489,8 +443,11 @@
 			files = (
 				76EA4C241FCACA6900DFB1F6 /* EarthquakePin.swift in Sources */,
 				76EA4C221FCAC86700DFB1F6 /* shadowView.swift in Sources */,
+				76403DA7231FD0D400BCED50 /* PresenterProtocol.swift in Sources */,
 				76AEA94A1FCA094A00DC87DD /* ViewController.swift in Sources */,
-				7674DF3E1FCA0C210061638A /* EarthquakeModel.swift in Sources */,
+				76403DAD231FD18700BCED50 /* earthquakeDataRequest.swift in Sources */,
+				76403DA5231FD08C00BCED50 /* EarthquakeDataStruct.swift in Sources */,
+				76403DA9231FD0DB00BCED50 /* MainPresenter.swift in Sources */,
 				76AEA9481FCA094A00DC87DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
